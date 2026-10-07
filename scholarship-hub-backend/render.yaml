@@ -3,12 +3,8 @@ services:
     name: scholarship-hub-api
     runtime: python
     plan: free
-    runtime: python
-    plan: free
-    rootDir: scholarship-hub-backend
-    buildCommand: pip install -r requirements.txt
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn scholarhub.api:app --host 0.0.0.0 --port $PORT --app-dir src
+    buildCommand: pip install -r scholarship-hub-backend/requirements.txt
+    startCommand: uvicorn scholarhub.api:app --host 0.0.0.0 --port $PORT --app-dir scholarship-hub-backend/src
     envVars:
       - key: PYTHON_VERSION
         value: 3.12.7
